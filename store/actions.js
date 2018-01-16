@@ -2,10 +2,10 @@ import * as types from './mutation-types'
 
 export const increment = ({ commit }) => {
   console.log('increment called')
-  commit(types.COUNTER_INCREMENT)
+  commit(types.INCREMENT_COUNTER)
 }
 
 export const decrement = ({ commit }) => {
   console.log('decrement called')
-  commit(types.COUNTER_DECREMENT)
+  commit(types.DECREMENT_COUNTER)
 }
