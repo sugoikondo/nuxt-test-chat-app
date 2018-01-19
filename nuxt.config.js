@@ -24,7 +24,7 @@ module.exports = {
 
   vueMaterial: {
     theme: 'black-green-dark'
-  }
+  },
   /*
   ** Build configuration
   */
