@@ -5,9 +5,8 @@ import * as getters from './getters'
 
 const store = () => new Vuex.Store({
   state: {
-    rooms: [],
-    comments: [],
-    counter: 1
+    counter: 1,
+    items: []
   },
   mutations,
   actions,

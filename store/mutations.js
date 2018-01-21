@@ -8,6 +8,9 @@ const mutations = {
   [types.DECREMENT_COUNTER] (state) {
     console.log('decrement called')
     state.counter--
+  },
+  [types.SET_LIVINGHOOD_ITEMS] (state, items) {
+    state.items = items
   }
 }
 

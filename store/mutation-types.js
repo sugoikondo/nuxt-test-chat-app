@@ -1,7 +1,7 @@
-// chat mutations
-export const ADD_CHAT = 'ADD_CHAT'
-export const REMOVE_CHAT = 'REMOVE_CHAT'
-
 // TEST: counter mutations
 export const INCREMENT_COUNTER = 'COUNTER_INCREMENT'
 export const DECREMENT_COUNTER = 'COUNTER_DECREMENT'
+
+// livinghood mutations
+export const STORE_LIVINGHOOD_ITEMS = 'STORE_LIVINGHOOD_ITEMS'
+export const SET_LIVINGHOOD_ITEMS   = 'SET_LIVINGHOOD_ITEMS'
