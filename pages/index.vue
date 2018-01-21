@@ -2,6 +2,7 @@
 <section class="container">
   <div>
     <counter></counter>
+    <nuxt-link to="livinghood">リンク</nuxt-link>
   </div>
 </section>
 </template>
