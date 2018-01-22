@@ -35,24 +35,43 @@
       md-icon.toolbar-icon attach_money
       h3.md-title 収支:
 
-    md-toolbar.form-area
-      .md-layout-item
-        md-field(md-inline)
-          label 名前
-          md-input(required)
+    md-toolbar
+      form(style="width: 100%", novalidate, @submit.stop.prevent="submit")
+        .md-layout.md-gutter
+          .md-layout-item
+            md-field(md-inline)
+              label 名前
+              md-input(required, v-model='name', @keydown.enter='submit')
 
-      .change-button
-        md-button.md-icon-button
-          md-icon add
-
-      .md-layout-item
-        md-field(md-inline='')
-          label 価格
-          md-input(type="number", required)
+          .md-layout-item
+            md-field(md-inline)
+              label 価格
+              md-input(type="number", required, v-model='price', @keydown.enter='submit')
 </template>
 
 <script>
-export default {}
+import { mapActions } from 'vuex'
+
+export default {
+  data: function () {
+    return {
+      name: '',
+      price: 0
+    }
+  },
+  methods: {
+    ...mapActions(['addItem']),
+    submit: function () {
+      console.log('hogehoge')
+      if (!this.name || !this.price) return false
+      const item = {
+        name: this.name,
+        price: this.price
+      }
+      this.addItem(item)
+    }
+  }
+}
 </script>
 
 <style lang="scss" scoped>

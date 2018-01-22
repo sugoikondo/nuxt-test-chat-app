@@ -26,3 +26,8 @@ export const loadItems = ({ commit }) => {
   const items = livinghoodService.load()
   commit(types.SET_LIVINGHOOD_ITEMS, items)
 }
+
+export const addItem = ({ commit }, item) => {
+  console.log('addItem called')
+  commit(types.ADD_LIVINGHOOD_ITEM, item)
+}

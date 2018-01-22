@@ -11,6 +11,11 @@ const mutations = {
   },
   [types.SET_LIVINGHOOD_ITEMS] (state, items) {
     state.items = items
+  },
+  [types.ADD_LIVINGHOOD_ITEM] (state, item) {
+    item.id = state.items.length
+    state.items.push(item)
+    console.log('item add')
   }
 }
 
