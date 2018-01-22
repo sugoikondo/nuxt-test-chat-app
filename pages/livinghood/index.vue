@@ -1,15 +1,35 @@
 <template lang="pug">
 .page-wrapper
   .page-content
+    <!-- 収入エリア -->
+    .expence-container
+      md-toolbar.md-accent
+        md-icon.toolbar-icon account_balance_wallet
+        h3.md-title 収入
+
+      md-list.item-list
+        md-list-item.item
+          md-icon add
+          span.md-list-item-text 給与
+          span.md-list-item-text.price 220000
+
+    <!-- 支出エリア -->
     .income-container
       md-toolbar.md-primary
         md-icon.toolbar-icon shopping_cart
         h3.md-title 支出
 
-    .expence-container
-      md-toolbar.md-accent
-        md-icon.toolbar-icon account_balance_wallet
-        h3.md-title 収入
+      md-list.item-list
+        md-list-item.item
+          md-icon remove
+          span.md-list-item-text 食費
+          span.md-list-item-text.price 10000
+        md-list-item.item
+          md-icon remove
+          span.md-list-item-text 光熱費
+          span.md-list-item-text.price 10000
+
+  <!-- フッター -->
   md-toolbar.footer-wrapper.md-accent
     md-icon.toolbar-icon attach_money
     h3.md-title 収支:
@@ -20,7 +40,7 @@ export default {}
 </script>
 
 <style lang="scss" scoped>
-// ページのレイアウト
+//-- ページ全体のレイアウト --
 .page-wrapper {
     display:        flex;
     min-height:     100vh;
@@ -28,9 +48,8 @@ export default {}
     // ページのコンテンツ部
     .page-content {
       flex: 1;
-      display: grid;
-      grid-template-columns: 50% 50%;
-      grid-auto-rows: 100%;
+      display: flex;
+      margin: 0 atuo;
     }
     // アイコン左寄せ
     .toolbar-icon {
@@ -42,14 +61,31 @@ export default {}
     }
 
     .income-container {
-      // background-color: #fff;
+      flex: 1;
     }
     .expence-container {
-
+      flex: 1
     }
 }
+//-- メインコンテンツ --
+.item-list-wrapper {}
 
-// フッター
+.item-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  .item {
+
+    .price {
+      text-align: right;
+      align-items: flex-end !important;
+    }
+
+  }
+}
+
+//-- フッター --
 .footer-wrapper {
   min-height: 64px;
 }
