@@ -30,9 +30,25 @@
           span.md-list-item-text.price 10000
 
   <!-- フッター -->
-  md-toolbar.footer-wrapper.md-accent
-    md-icon.toolbar-icon attach_money
-    h3.md-title 収支:
+  .footer-container
+    md-toolbar.md-accent.result-area
+      md-icon.toolbar-icon attach_money
+      h3.md-title 収支:
+
+    md-toolbar.form-area
+      .md-layout-item
+        md-field(md-inline)
+          label 名前
+          md-input(required)
+
+      .change-button
+        md-button.md-icon-button
+          md-icon add
+
+      .md-layout-item
+        md-field(md-inline='')
+          label 価格
+          md-input(type="number", required)
 </template>
 
 <script>
@@ -66,6 +82,10 @@ export default {}
     .expence-container {
       flex: 1
     }
+    .footer-container {
+      display: flex;
+      flex-direction: column;
+    }
 }
 //-- メインコンテンツ --
 .item-list-wrapper {}
@@ -81,7 +101,15 @@ export default {}
       text-align: right;
       align-items: flex-end !important;
     }
+  }
+}
+.form-area {
+  min-height: 56px;
+  display: flex;
+  flex-direction: row;
 
+  .change-button {
+    margin-top: 8px;
   }
 }
 
