@@ -2,32 +2,20 @@
 .page-wrapper
   .page-content
     <!-- 収入エリア -->
-    .expence-container
+    .income-container
       md-toolbar.md-accent
         md-icon.toolbar-icon account_balance_wallet
         h3.md-title 収入
 
-      md-list.item-list
-        md-list-item.item
-          md-icon add
-          span.md-list-item-text 給与
-          span.md-list-item-text.price 220000
+      item-list(:items='getIncomeItems')
 
     <!-- 支出エリア -->
-    .income-container
+    .expence-container
       md-toolbar.md-primary
         md-icon.toolbar-icon shopping_cart
         h3.md-title 支出
 
-      md-list.item-list
-        md-list-item.item
-          md-icon remove
-          span.md-list-item-text 食費
-          span.md-list-item-text.price 10000
-        md-list-item.item
-          md-icon remove
-          span.md-list-item-text 光熱費
-          span.md-list-item-text.price 10000
+      item-list(:items='getExpenceItems')
 
   <!-- フッター -->
   .footer-container
@@ -50,14 +38,21 @@
 </template>
 
 <script>
-import { mapActions } from 'vuex'
+import { mapActions, mapGetters } from 'vuex'
+import ItemList from '../../components/ItemList.vue'
 
 export default {
+  components: {
+    ItemList
+  },
   data: function () {
     return {
       name: '',
       price: 0
     }
+  },
+  computed: {
+    ...mapGetters(['getIncomeItems', 'getExpenceItems'])
   },
   methods: {
     ...mapActions(['addItem']),
@@ -105,31 +100,6 @@ export default {
       display: flex;
       flex-direction: column;
     }
-}
-//-- メインコンテンツ --
-.item-list-wrapper {}
-
-.item-list {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-
-  .item {
-
-    .price {
-      text-align: right;
-      align-items: flex-end !important;
-    }
-  }
-}
-.form-area {
-  min-height: 56px;
-  display: flex;
-  flex-direction: row;
-
-  .change-button {
-    margin-top: 8px;
-  }
 }
 
 //-- フッター --
