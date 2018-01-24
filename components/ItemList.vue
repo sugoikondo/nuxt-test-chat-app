@@ -15,9 +15,6 @@ export default {
     items: {
       type: Array
     }
-  },
-  created: () => {
-    console.log('ItemList created')
   }
 }
 </script>
