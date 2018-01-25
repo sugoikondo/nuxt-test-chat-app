@@ -55,7 +55,7 @@ export default {
     ...mapGetters(['getIncomeItems', 'getExpenceItems', 'calcPayments'])
   },
   methods: {
-    ...mapActions(['addItem']),
+    ...mapActions(['addItem', 'loadItems']),
     submit: function () {
       console.log('hogehoge')
       if (!this.name || !this.price) return false
@@ -69,6 +69,9 @@ export default {
       this.name = ''
       this.price = 0
     }
+  },
+  created: function () {
+    this.loadItems()
   }
 }
 </script>

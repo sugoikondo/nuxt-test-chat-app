@@ -15,7 +15,6 @@ const mutations = {
   [types.ADD_LIVINGHOOD_ITEM] (state, item) {
     item.id = state.items.length
     state.items.push(item)
-    console.log('item add')
   }
 }
 
