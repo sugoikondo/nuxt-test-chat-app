@@ -21,7 +21,7 @@
   .footer-container
     md-toolbar.md-accent.result-area
       md-icon.toolbar-icon attach_money
-      h3.md-title 収支:
+      h3.md-title 収支: {{ calcPayments }} 円
 
     md-toolbar
       form(style="width: 100%", novalidate, @submit.stop.prevent="submit")
@@ -52,7 +52,7 @@ export default {
     }
   },
   computed: {
-    ...mapGetters(['getIncomeItems', 'getExpenceItems'])
+    ...mapGetters(['getIncomeItems', 'getExpenceItems', 'calcPayments'])
   },
   methods: {
     ...mapActions(['addItem']),
@@ -64,6 +64,10 @@ export default {
         price: this.price
       }
       this.addItem(item)
+
+      // フォームの中身を空にする
+      this.name = ''
+      this.price = 0
     }
   }
 }
