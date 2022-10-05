@@ -10,6 +10,11 @@
     mustache "^2.3.0"
     stack-trace "0.0.10"
 
+"@snyk/protect@^1.1022.0":
+  version "1.1022.0"
+  resolved "https://registry.yarnpkg.com/@snyk/protect/-/protect-1.1022.0.tgz#2d5e480b02ed62f372acd4a97a078b5607a1147e"
+  integrity sha512-ASix6hXE9b3lgWovJjpxkx6W57pyqsB67ISxQIomLUd+XHeDodnhM3nsHJwQj8hVRWZwoHoYmnZKy9DgUg0q8w==
+
 "@std/esm@^0.19.1":
   version "0.19.1"
   resolved "https://registry.yarnpkg.com/@std/esm/-/esm-0.19.1.tgz#8bdf8ed0e759eea1c7010d22fb9789e462ec0a9b"
